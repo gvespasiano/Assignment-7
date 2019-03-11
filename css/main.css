@@ -8,6 +8,11 @@ White:      #FFFFFF
 Light Gray: #D5DBD8
 */
 
+/* Large Donation Class change for article headers*/
+.bigmoola h2{
+	color:#DB152C;
+}
+
 
 body {
   margin: 0;

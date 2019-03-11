@@ -28,19 +28,23 @@ var donorAdd = document.getElementById("SideNav");
 var donorH = document.createElement ('h3');
 var genDonorMsg = document.createTextNode("Thank you for your very generous donation!");
 var normDonorMsg = document.createTextNode("Thank you for your donation of $45");
-
+var pageArticles = document.getElementsByTagName("article");
 
 
 document.getElementById('BtnDonate').addEventListener('click', function(){
-  //Code in here executes when the user clicks the "Donate" button.
 	donation = window.prompt('How much would you like to donate?');
 	if (donation < 100){
 		donorH.appendChild(normDonorMsg);
 		donorAdd.appendChild(donorH);
 	}
-	else{
+//Large Donation page changes
+	else if (donation >=100){
 		donorH.appendChild(genDonorMsg);
 		donorAdd.appendChild(donorH);
+		donorAdd.setAttribute("style", "color:#DB152C");
+		for (var i = 0; i < pageArticles.length; i++){
+			pageArticles[i].classList.add('bigmoola');
+		}
 	}
 });
 
