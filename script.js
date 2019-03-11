@@ -20,13 +20,28 @@ var churchillSpeech = {
     speechesArray = [churchillSpeech, ghandiSpeech, demosthenesSpeech],
     donatePrompt;
 
-//Vars
+//Navigation Vars
 var sideBar = document.getElementById("ConsoleDisplay");
+
+//donorVars
+var donorAdd = document.getElementById("SideNav");
+var donorH = document.createElement ('h3');
+var genDonorMsg = document.createTextNode("Thank you for your very generous donation!");
+var normDonorMsg = document.createTextNode("Thank you for your donation of $45");
+
 
 
 document.getElementById('BtnDonate').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Donate" button.
 	donation = window.prompt('How much would you like to donate?');
+	if (donation < 100){
+		donorH.appendChild(normDonorMsg);
+		donorAdd.appendChild(donorH);
+	}
+	else{
+		donorH.appendChild(genDonorMsg);
+		donorAdd.appendChild(donorH);
+	}
 });
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
